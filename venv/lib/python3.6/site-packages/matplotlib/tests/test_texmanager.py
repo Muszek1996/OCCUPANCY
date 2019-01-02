@@ -1,3 +1,5 @@
+from __future__ import absolute_import, division, print_function
+
 import matplotlib.pyplot as plt
 from matplotlib.texmanager import TexManager
 

@@ -1,3 +1,5 @@
+from __future__ import absolute_import, division, print_function
+
 import numpy as np
 import pytest
 
@@ -50,7 +52,7 @@ def test_patheffect3():
                          path_effects.Normal()])
     plt.title(r'testing$^{123}$',
         path_effects=[path_effects.withStroke(linewidth=1, foreground="r")])
-    leg = plt.legend([p1], [r'Line 1$^2$'], fancybox=True, loc='upper left')
+    leg = plt.legend([p1], [r'Line 1$^2$'], fancybox=True, loc=2)
     leg.legendPatch.set_path_effects([path_effects.withSimplePatchShadow()])
 
     text = plt.text(2, 3, 'Drop test', color='white',
@@ -119,7 +121,7 @@ def test_SimplePatchShadow_offset():
     assert pe._offset == (4, 5)
 
 
-@image_comparison(baseline_images=['collection'], tol=0.02, style='mpl20')
+@image_comparison(baseline_images=['collection'], tol=0.02)
 def test_collection():
     x, y = np.meshgrid(np.linspace(0, 10, 150), np.linspace(-5, 5, 100))
     data = np.sin(x) + np.cos(y)

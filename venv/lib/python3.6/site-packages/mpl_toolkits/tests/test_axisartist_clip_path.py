@@ -1,3 +1,8 @@
+from __future__ import (absolute_import, division, print_function,
+                        unicode_literals)
+
+import six
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.testing.decorators import image_comparison
@@ -28,6 +33,6 @@ def test_clip_path():
 
     ccc = iter(['C3o', 'C2x', 'C3o', 'C2x'])
     for ttt in ticks:
-        cc = next(ccc)
+        cc = six.next(ccc)
         for (xx, yy), aa in ttt:
             ax.plot([xx], [yy], cc)

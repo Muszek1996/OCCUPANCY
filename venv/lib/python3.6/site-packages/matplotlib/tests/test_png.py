@@ -1,4 +1,7 @@
-from io import BytesIO
+from __future__ import absolute_import, division, print_function
+
+import six
+from six import BytesIO
 import glob
 import os
 import numpy as np
